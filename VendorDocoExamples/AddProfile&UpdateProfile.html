@@ -1,0 +1,83 @@
+<HTML><head> </head> <body><table> <tr> <td > <lable > Operation:</lable> </td> <td > Add Profile / Update Profile</td></tr><tr> <td ><lable> Description:</lable> </td> <td>To create and update profiles for various administrator users.&nbsp;</td> </tr></table><table><tr><td><br /></td></tr></table><table > <tr > <th>Sample Configuration</th></tr><tr><td ><table ><tr><td><div ><xmp >	<AdministrationProfile>
+		<Name>profilename</Name>
+		<Dashboard>Read-Write/Read-Only/None</Dashboard>
+		<Wizard>Read-Write/Read-Only/None</Wizard>
+		<System>
+		<!--
+			Below tags should be skipped when all the entities in a category will have same value as category
+
+			if subelement are not defined attach as group level 
+			e.g. system is read-only and only password is defined as read-write then centralconsole will be readonly and password as readwrite
+			if not defined at group level then all sub element are required, check at API Opcode not at parser level
+		-->
+			<SetSystemProfile>Read-Write/Read-Only/None</SetSystemProfile>
+			<Profile>Read-Write/Read-Only/None</Profile>
+			<Password>Read-Write/Read-Only/None</Password>
+			<CentralManagement>Read-Write/Read-Only/None</CentralManagement>
+			<Backup>Read-Write/Read-Only/None</Backup>
+			<Restore>Read-Write/Read-Only/None</Restore>
+			<Firmware>Read-Write/Read-Only/None</Firmware>
+			<Licensing>Read-Write/Read-Only/None</Licensing>
+			<Services>Read-Write/Read-Only/None</Services>
+			<Updates>Read-Write/Read-Only/None</Updates>
+			<RebootShutdown>Read-Write/Read-Only/None</RebootShutdown>
+			<HA>Read-Write/Read-Only/None</HA>
+			<DownloadCertificates>Read-Write/Read-Only/None</DownloadCertificates>
+			<OtherCertificateConfiguration>Read-Write/Read-Only/None</OtherCertificateConfiguration>
+			<Diagnostics>Read-Write/Read-Only/None</Diagnostics>
+			<OtherSystemConfiguration>Read-Write/Read-Only/None</OtherSystemConfiguration>
+		</System>
+		<Objects>Read-Write/Read-Only/None</Objects>
+		<Network>Read-Write/Read-Only/None</Network>
+		<Identity>
+			<SetIdentityProfile>Read-Write/Read-Only/None</SetIdentityProfile>
+			<Authentication>Read-Write/Read-Only/None</Authentication>
+			<Groups>Read-Write/Read-Only/None</Groups>
+			<ExportUsers>Read-Write/Read-Only/None</ExportUsers>
+			<Users>Read-Write/Read-Only/None</Users>
+			<AdministratorUsers>Read-Write/Read-Only/None</AdministratorUsers>
+			<GuestUsersManagement>Read-Write/Read-Only/None</GuestUsersManagement>
+			<OtherGuestUserSettings>Read-Write/Read-Only/None</OtherGuestUserSettings>
+			<Policy>Read-Write/Read-Only/None</Policy>
+			<TestExternalServerConnectivity>Read-Write/Read-Only/None</TestExternalServerConnectivity>
+			<DisconnectLiveUser>Read-Write/Read-Only/None</DisconnectLiveUser>
+		</Identity>
+		<Firewall>Read-Write/Read-Only/None</Firewall>
+		<VPN>
+			<SetVPNProfile>Read-Write/Read-Only/None</SetVPNProfile>
+			<ConnectTunnel>Read-Write/Read-Only/None</ConnectTunnel>
+			<OtherVPNConfigurations>Read-Write/Read-Only/None</OtherVPNConfigurations>
+		</VPN>
+		<IPS>Read-Write/Read-Only/None</IPS>
+		<WebFilter>Read-Write/Read-Only/None</WebFilter>
+		<CloudApplicationDashboard>Read-Write/Read-Only/None</CloudApplicationDashboard>
+		<SandstormActivity>Read-Write/Read-Only/None</SandstormActivity>
+		<ApplicationFilter>Read-Write/Read-Only/None</ApplicationFilter>
+		<WAF>
+			<SetWAFProfile>Read-Write/Read-Only/None</SetWAFProfile>
+			<Alerts>Read-Write/Read-Only/None</Alerts>
+			<OtherWAFConfiguration>Read-Write/Read-Only/None</OtherWAFConfiguration>
+		</WAF>
+		<IM>Read-Write/Read-Only/None</IM>
+		<QoS>Read-Write/Read-Only/None</QoS>
+		<AntiVirus>
+			<SetAntiVirusProfile>Read-Write/Read-Only/None</SetAntiVirusProfile>
+			<DownloadQuarantineMail>Read-Write/Read-Only/None</DownloadQuarantineMail>
+			<OtherAntiVirusConfigurations>Read-Write/Read-Only/None</OtherAntiVirusConfigurations>
+		</AntiVirus>
+		<AntiSpam>
+			<SetAntiSpamProfile>Read-Write/Read-Only/None</SetAntiSpamProfile>
+			<DownloadReleaseQuarantineMail>Read-Write/Read-Only/None</DownloadReleaseQuarantineMail>
+			<OtherAntiSpamConfigurations>Read-Write/Read-Only/None</OtherAntiSpamConfigurations>
+		</AntiSpam>
+		<TrafficDiscovery>Read-Write/Read-Only/None</TrafficDiscovery>
+		<LogsReports>
+			<SetLogsReportsProfile>Read-Write/Read-Only/None</SetLogsReportsProfile>
+			<Configuration>Read-Write/Read-Only/None</Configuration>
+			<LogViewer>Read-Write/Read-Only/None</LogViewer>
+			<ReportsAccess>Read-Write/Read-Only/None</ReportsAccess>
+			<Four-EyeAuthenticationSettings>Read-Write/Read-Only/None</Four-EyeAuthenticationSettings>
+			<De-Anonymization>Read-Write/Read-Only/None</De-Anonymization>
+		</LogsReports>
+	</AdministrationProfile>
+</xmp></div></td></tr> </table></td></tr> </table><br /><b><label > Attribute/Parameter Information :  </label></b> <br> <br><table > <tr > <th>Parameter</th> <th>Mandatory</th> <th>Default</th> <th>Description</th> </tr><tr><td  >Name</td><td  >Yes&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Specify a name to identify the profile.<br><b>Name confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li><li>Character not allowed: Comma (,)</li><li>Maximum characters allowed are 50.</li><li>UTF-8 character(s) are allowed.</li></ul></td></tr><tr><td  >Listofentityrole</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>List of roles that can be assigned to Profile. You can assign Read-Only or Read-Write rights of individual roles.<br><b>Listofentityrole confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li></ul></td></tr> </table><br> <b><label > Status Message Information :  </label></b> <br> <br> <table > <tr > <th> Operation </th> <th> &nbsp;&nbsp;Status&nbsp;&nbsp; </th> <th>Message</th> </tr><tr><td  >Add Profile</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ACLInserted); document.write(v1);</script></tr><tr><td  >Add Profile</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ACLNotInserted); document.write(v1);</script></tr><tr><td  >Add Profile</td><td >502</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ACLRoleNameExisted); document.write(v1);</script></tr><tr><td  >Update Profile</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ACLUpdated); document.write(v1);</script></tr><tr><td  >Update Profile</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ACLNotUpdated); document.write(v1);</script></tr></table></br ></body></HTML>

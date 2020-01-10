@@ -1,0 +1,37 @@
+<HTML><head> </head> <body><table> <tr> <td > <lable > Operation:</lable> </td> <td > Add SSLVPN Policy / Edit SSLVPN Policy</td></tr><tr> <td ><lable> Description:</lable> </td> <td>To Add/Edit SSL VPN Policy for determining access mode available to the remote users.To edit SSL VPN Policy.&nbsp;</td> </tr></table><table><tr><td><br /></td></tr></table><table > <tr > <th>Sample Configuration</th></tr><tr><td ><table ><tr><td><div ><xmp >	<SSLVPNPolicy>
+		<TunnelPolicy>
+			<Name>Name</Name>
+			<Description>Text</Description>
+			<PolicyMembers>
+				<Member />
+				:
+			</PolicyMembers>
+			<!--TunnelAccess Enable -->
+			<UseAsDefaultGateway>off/on</UseAsDefaultGateway>
+			<PermittedNetworkResourcesIPv4>
+				<Resource>#PortA</Resource>
+				:
+			</PermittedNetworkResourcesIPv4>
+			<PermittedNetworkResourcesIPv6>
+				<Resource>#PortA</Resource>
+				:
+			</PermittedNetworkResourcesIPv6>
+			<DisconnectIdleClients>on/off</DisconnectIdleClients>
+			<OverrideGlobalTimeout>Number</OverrideGlobalTimeout>
+		</TunnelPolicy>
+		<ClientlessPolicy>
+			<Name>Name</Name>
+			<Description>Text</Description>
+			<PolicyMembers>
+				<Member />
+				:
+			</PolicyMembers>
+			<RestrictWebApplications>Enable/Disable</RestrictWebApplications>
+			<WebAccessibleResources>
+				<BookmarkGroups>mailsitesbookmarkgroup</BookmarkGroups>
+				<Bookmarks>bkyahoo</Bookmarks>
+				:
+			</WebAccessibleResources>
+		</ClientlessPolicy>
+	</SSLVPNPolicy>
+</xmp></div></td></tr> </table></td></tr> </table><br /><b><label > Attribute/Parameter Information :  </label></b> <br> <br><table > <tr > <th>Parameter</th> <th>Mandatory</th> <th>Default</th> <th>Description</th> </tr><tr><td  >Name</td><td  >Yes&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Specify a name for SSL VPN Policy.<br><b>Name confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li><li>Character not allowed: Comma (,)</li><li>UTF-8 character(s) are allowed.</li></ul></td></tr><tr><td  >Web Access</td><td  >Yes&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Enable Web Access mode for remote users.<br><b>Web Access confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Only '1', '6' are allowed.</li></ul></td></tr><tr><td  >Description</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Specify SSL VPN Policy description.<br><b>Description confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li></ul></td></tr><tr><td  >UseAsDefaultGateway</td><td  >No&nbsp;</td><td  >SplitTunnel&nbsp;</td><td ><label >Description: </label> <br>Select tunnel type for routing user's traffic from the available options: Split Tunnel or Full Tunnel.<br><b>UseAsDefaultGateway confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Only 'Off', 'On' are allowed.</li></ul></td></tr><tr><td  >Resource</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Host/Network that remote user can access.<br><b>Resource confines to:</b><ul><li>Type is 'ARRAY'.</li><li>Datatype is 'STRING'.</li><li>NoComma</li><li>Multiple values are allowed.</li><li>Duplicate values will be ignored.</li></ul></td></tr><tr><td  >Resource</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Host/Network that remote user can access.<br><b>Resource confines to:</b><ul><li>Type is 'ARRAY'.</li><li>Datatype is 'STRING'.</li><li>Character not allowed: Comma (,)</li><li>UTF-8 character(s) are allowed.</li><li>Multiple values are allowed.</li><li>Duplicate values will be ignored.</li></ul></td></tr><tr><td  >DisconnectIdleClients</td><td  >No&nbsp;</td><td  >UseGlobalSettings&nbsp;</td><td ><label >Description: </label> <br>Select whether to use Global Settings or Override Global Settings.<br><b>DisconnectIdleClients confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Only 'Off', 'On' are allowed.</li></ul></td></tr><tr><td  >OverrideGlobalTimeout</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>If Override Global Settings option is selected, mention idle timeout in minutes.<br><b>OverrideGlobalTimeout confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'INTEGER'.</li><li>Range 15 to 60 is allowed.</li></ul></td></tr><tr><td  >RestrictWebApplications</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Enable access to Custom URLs for Web Access Mode.<br><b>RestrictWebApplications confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Only 'Disable', 'Enable' are allowed.</li></ul></td></tr><tr><td  >WebAccessibleResources</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Bookmarks/Bookmarks Group the remote user can access in Web Access mode.<br><b>WebAccessibleResources confines to:</b><ul><li>Type is 'ARRAY'.</li><li>Datatype is 'STRING'.</li><li>NoComma</li><li>Multiple values are allowed.</li><li>Duplicate values will be ignored.</li></ul></td></tr><tr><td  >Member</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Enable Web Access mode for remote users.<br><b>Member confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li></ul></td></tr> </table><br> <b><label > Status Message Information :  </label></b> <br> <br> <table > <tr > <th> Operation </th> <th> &nbsp;&nbsp;Status&nbsp;&nbsp; </th> <th>Message</th> </tr><tr><td  >Add SSLVPN Policy</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.SSLVPNpolicyInserted); document.write(v1);</script></tr><tr><td  >Add SSLVPN Policy</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.SSLVPNpolicyNotInserted); document.write(v1);</script></tr><tr><td  >Add SSLVPN Policy</td><td >502</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.SSLVPNpolicyRecordExist); document.write(v1);</script></tr><tr><td  >Edit SSLVPN Policy</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.SSLVPNpolicyUpdated); document.write(v1);</script></tr><tr><td  >Edit SSLVPN Policy</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.SSLVPNpolicyNotUpdated); document.write(v1);</script></tr><tr><td  >Edit SSLVPN Policy</td><td >502</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.SSLVPNpolicyRecordExist); document.write(v1);</script></tr></table></br ></body></HTML>
