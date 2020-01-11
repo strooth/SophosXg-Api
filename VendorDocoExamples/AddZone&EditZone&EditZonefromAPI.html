@@ -1,0 +1,34 @@
+<HTML><head> </head> <body><table> <tr> <td > <lable > Operation:</lable> </td> <td > Add Zone / Edit Zone / Edit Zone from API</td></tr><tr> <td ><lable> Description:</lable> </td> <td>To Add/Edit Zone. Zone is a logical grouping of physical interfaces/ports.&nbsp;</td> </tr></table><table><tr><td><br /></td></tr></table><table > <tr > <th>Sample Configuration</th></tr><tr><td ><table ><tr><td><div ><xmp >	<Zone>
+		<Name>zonename</Name>
+		<Type>LAN/DMZ</Type>
+		<!-- MemberPorts are for readonly purpose -->
+		<Description>Text</Description>
+		<ApplianceAccess>
+			<AdminServices>
+				<HTTP>Enable/Disable</HTTP>
+				<HTTPS>Enable/Disable</HTTPS>
+				<Telnet>Enable/Disable</Telnet>
+				<SSH>Enable/Disable</SSH>
+			</AdminServices>
+			<AuthenticationServices>
+				<ClientAuthentication>Enable/Disable</ClientAuthentication>
+				<CaptivePortal>Enable/Disable</CaptivePortal>
+				<NTLM>Enable/Disable</NTLM>
+				<RadiusSSO>Enable/Disable</RadiusSSO>
+			</AuthenticationServices>
+			<NetworkServices>
+				<DNS>Enable/Disable</DNS>
+				<Ping>Enable/Disable</Ping>
+			</NetworkServices>
+			<OtherServices>
+				<WebProxy>Enable/Disable</WebProxy>
+				<SSLVPN>Enable/Disable</SSLVPN>
+				<UserPortal>Enable/Disable</UserPortal>
+				<DynamicRouting>Enable/Disable</DynamicRouting>
+				<SMTPRelay>Enable/Disable</SMTPRelay>
+				<SNMP>Enable/Disable</SNMP>
+			</OtherServices>
+		</ApplianceAccess>
+	</Zone>
+</xmp></div></td></tr> </table></td></tr> </table><br /><b><label > Attribute/Parameter Information :  </label></b> <br> <br><table > <tr > <th>Parameter</th> <th>Mandatory</th> <th>Default</th> <th>Description</th> </tr><tr><td  >Name</td><td  >Yes&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Specify a name to identify the Zone.<br><b>Name confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li><li>Allowed first characters: Alphanumeric characters (A-Za-z1-9) and not a zero (0).
+For other characters: (A-Za-z0-9_)</li><li>Maximum characters allowed are 60.</li></ul></td></tr><tr><td  >Type</td><td  >Yes&nbsp;</td><td  >LAN&nbsp;</td><td ><label >Description: </label> <br>Select the type of Zone from the available options: LAN or DMZ.<br><b>Type confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Only 'LAN', 'WAN', 'DMZ', 'LOCAL', 'VPN', 'Discover' are allowed.</li></ul></td></tr><tr><td  >MemberPorts</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Displays all the member ports of the particular Zone selected.<br><b>MemberPorts confines to:</b><ul><li>Type is 'CSV'.</li><li>Datatype is 'STRING'.</li><li>Comma separated values are allowed.</li></ul></td></tr><tr><td  >Description</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Specify Zone description.<br><b>Description confines to:</b><ul><li>Type is 'SCALAR'.</li><li>Datatype is 'STRING'.</li><li>Maximum characters allowed are 60.</li></ul></td></tr><tr><td  >RadiusSSO/NTLM/DNS/SSH/WebProxy/HTTP/CaptivePortal/HTTPS/Windows-LinuxClient/Ping/Telnet/SSLVPN</td><td  >No&nbsp;</td><td  >&nbsp;</td><td ><label >Description: </label> <br>Define the type of administrative access permitted on zone.<br><b>RadiusSSO/NTLM/DNS/SSH/WebProxy/HTTP/CaptivePortal/HTTPS/Windows-LinuxClient/Ping/Telnet/SSLVPN confines to:</b><ul><li>Type is 'ARRAY'.</li><li>Only 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', '12', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', 'Enable', '40', '45' are allowed.</li><li>Multiple values are allowed.</li></ul></td></tr> </table><br> <b><label > Status Message Information :  </label></b> <br> <br> <table > <tr > <th> Operation </th> <th> &nbsp;&nbsp;Status&nbsp;&nbsp; </th> <th>Message</th> </tr><tr><td  >Add Zone</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneAddSuccess); document.write(v1);</script></tr><tr><td  >Add Zone</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneAddFail); document.write(v1);</script></tr><tr><td  >Add Zone</td><td >502</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneRecordExist); document.write(v1);</script></tr><tr><td  >Add Zone</td><td >510</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneAddFailMAXLimit); document.write(v1);</script></tr><tr><td  >Edit Zone from API</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneUpdateSuccess); document.write(v1);</script></tr><tr><td  >Edit Zone from API</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneUpdateFail); document.write(v1);</script></tr><tr><td  >Edit Zone</td><td >200</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneUpdateSuccess); document.write(v1);</script></tr><tr><td  >Edit Zone</td><td >500</td><td ><script> var txtCommName="abc";myreplace="";var v1=replaceFieldFromText(Message.ZoneUpdateFail); document.write(v1);</script></tr></table></br ></body></HTML>
